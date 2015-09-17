@@ -4,20 +4,21 @@
  */
 'use strict';
 
-var React = require('react-native');
-var {
+import React from 'react-native';
+const {
+  Component,
   AppRegistry,
   StyleSheet,
   Text,
   View,
 } = React;
 
-var TellApp = React.createClass({
-  render: function() {
+class TellApp extends Component {
+  render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Welcome to React Native, Killa!
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
@@ -29,23 +30,24 @@ var TellApp = React.createClass({
       </View>
     );
   }
-});
+};
 
 var styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#000',
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+    color: '#fff'
   },
   instructions: {
     textAlign: 'center',
-    color: '#333333',
+    color: '#fff',
     marginBottom: 5,
   },
 });
