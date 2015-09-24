@@ -35,7 +35,7 @@ var config = {
 
 // Hot loader
 if (process.env.HOT) {
-  config.devtool = 'eval'; // Speed up incremental builds
+  config.devtool = 'source-map'; // Speed up incremental builds
   config.entry['index.ios'].unshift('react-native-webpack-server/hot/entry');
   config.entry['index.ios'].unshift('webpack/hot/only-dev-server');
   config.entry['index.ios'].unshift('webpack-dev-server/client?http://localhost:8082');
@@ -44,7 +44,7 @@ if (process.env.HOT) {
   config.module.loaders[0].query.plugins.push('react-transform');
   config.module.loaders[0].query.extra = {
     'react-transform': [{
-      target: 'react-transform-webpack-hmr',
+      target: 'react-transform-hmr',
       imports: ['react-native'],
       locals: ['module']
     }]
